@@ -1,7 +1,7 @@
 from marshmallow import validates, ValidationError, fields
 
 from app.extensions import ma
-from app.models.category_model import Category
+from app.categories.models import Category
 
 
 class CategorySchema(ma.SQLAlchemyAutoSchema):

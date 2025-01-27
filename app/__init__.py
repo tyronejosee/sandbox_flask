@@ -3,8 +3,8 @@ from flask_migrate import Migrate
 
 from app.config import config_by_name
 from app.extensions import db, jwt, ma
-from app.routes.category_routes import category_bp
-from app.routes.product_routes import product_bp
+from app.categories.routes import category_bp
+from app.products.routes import product_bp
 
 migrate = Migrate()
 

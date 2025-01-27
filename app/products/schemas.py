@@ -1,7 +1,7 @@
 from marshmallow import validates, ValidationError, fields
 
 from app.extensions import ma
-from app.models.product_model import Product
+from app.products.models import Product
 
 
 class ProductSchema(ma.SQLAlchemyAutoSchema):
@@ -27,7 +27,7 @@ class ProductSchema(ma.SQLAlchemyAutoSchema):
             raise ValidationError("Price must be greater than zero.")
 
     @validates("stock")
-    def validate_stock(self, value):
+    def validate_stock(self, value) -> None:
         if value < 0:
             raise ValidationError("Stock cannot be negative.")
 
